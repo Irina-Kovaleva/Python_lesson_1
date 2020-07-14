@@ -1,0 +1,65 @@
+#Ex. 1
+b = 2
+a = 1
+print (a)
+print (b)
+
+a = int (input('Введите целое число от 1 до 100: '))
+b = int (input('Введите целое число больше 100: '))
+print ('a = %i' % (a))
+print ('b = %i' % (b))
+
+c = 'ABCD'
+d = 'EFG'
+print (c)
+print (d)
+
+c = str (input('Введите строку: '))
+d = str (input('Введите еще одну строку: '))
+print ('Строка 1: %s' % (c))
+print ('Строка 2: %s' % (d))
+
+#Ex. 2
+time = int(input('Введите время в секундах: '))
+hh = time // 3600
+time = time % 3600
+mm = time // 60
+ss = time % 60
+print(f'Время в формате чч:мм:сс: {hh:02}:{mm:02}:{ss:02}')
+
+
+#Ex. 3
+n = int (input('Введите целое число: '))
+print (n + int(str(n) + str (n)) + int(str(n) + str (n) + str(n)))
+
+#Ex. 4
+n = int(input('Введите целое число: '))
+max_num = 0
+while n > 0:
+    if max_num < n % 10:
+        max_num = int(n % 10)
+    n = n // 10
+print ('Самая большая цифра в числе: %i' %(max_num))
+
+#Ex. 5
+income = int(input('Введите величину выручки: '))
+expense = int(input('Введите величину расходов: '))
+if income > expense:
+    print('Ваша прибыль: %i' %(income - expense))
+    print('Рентабильность: %.2f' %((income - expense) / income))
+    headcount = int(input('Введите количество ваших сотрудников: '))
+    print('Прибыль на одного сотрудника: %.2f' % (income / headcount))
+else:
+    print('Ваш убыток: %i' % (income - expense))
+
+#Ex. 6
+distance = float(input('Введите результат в первый день (в метрах): '))
+target_distance = float(input('Введите необходимую дистанцию (в метрах): '))
+print('Результат:')
+print('1-й День: %.2f' %(distance))
+day = 1
+while distance < target_distance:
+    distance = distance * 1.1
+    day = day +1
+    print('%i-й День: %.2f' %(day, distance))
+print('Ответ: на %i-й день спортсмен достигнет результата - не менее %.2f метров.' %(day, target_distance))
