@@ -1,0 +1,60 @@
+#Ex. 1
+list = [1, 2.1, 'abcde', ['A','B','C'], {11, 12, 13}, {'Name1':'Ivan','Name2':'Aleksandr','Name3':'Oleg'}]
+for element in list:
+    print(element, type(element))
+
+#Ex. 2
+elements_list = list(input('Введите список: '))
+print(elements_list)
+list_len = (len(elements_list))
+max_i = (list_len // 2) * 2
+i=0
+while i < max_i:
+    if i > 1000:
+        break
+    else:
+        elements_list[i], elements_list[i + 1] = elements_list[i + 1], elements_list[i]
+        i = i + 2
+print(elements_list)
+
+#Ex. 3
+list_seasons = ['зима', 'зима', 'весна', 'весна', 'весна', 'лето', 'лето','лето', 'осень', 'осень', 'осень', 'зима']
+month_num = int(input('Введите номер месяца: '))
+try:
+    print('%i-й месяц - это %s' % (month_num, str(list_seasons[month_num - 1])))
+except:
+    print('Некорректный ввод. Необходимо ввести число от 1 до 12.')
+
+dict_seasons = {1:'зима', 2:'зима', 3:'весна', 4:'весна', 5:'весна', 6:'лето', 7:'лето',8:'лето', 9:'осень', 10:'осень', 11:'осень', 12:'зима' }
+month_num = int(input('Введите номер месяца: '))
+try:
+    print('%i-й месяц - это %s' % (month_num, str(dict_seasons[month_num])))
+except:
+    print('Некорректный ввод. Необходимо ввести число от 1 до 12.')
+
+#Ex. 4
+string = str(input('Введите строку: '))
+list = string.split(' ')
+len = len(list)
+i = 0
+while i < len:
+    if i > 1000:
+        break
+    else:
+        print('%i: %s' % (i+1, str(list[i])[:10]))
+        i = i +1
+
+#Ex. 5
+my_list = [32, 24, 15, 11, 9, 5, 5, 3]
+new_item = int(input('Введите натуральное число: '))
+
+if new_item < my_list[len(my_list)-1]:
+    my_list.append(new_item)
+elif new_item > my_list[0]:
+    my_list.insert(0, new_item)
+else:
+    i = 0
+    while new_item < my_list[i]:
+        i = i+1
+    my_list.insert(i, new_item)
+print(my_list)
